@@ -1,0 +1,43 @@
+from pydantic import BaseModel, Field
+
+class StudentInfo(BaseModel):
+    Marital_status: int = Field(..., alias="Marital status")
+    Application_mode: int = Field(..., alias="Application mode")
+    Application_order: int = Field(..., alias="Application order")
+    Course: int = Field(..., alias="Course")
+    Daytime_evening_attendance: int = Field(..., alias="Daytime/evening attendance")
+    Previous_qualification: int = Field(..., alias="Previous qualification")
+    Previous_qualification_grade: float = Field(..., alias="Previous qualification (grade)")
+    Nacionality: int = Field(..., alias="Nacionality")
+    Mothers_qualification: int = Field(..., alias="Mother's qualification")
+    Fathers_qualification: int = Field(..., alias="Father's qualification")
+    Mothers_occupation: int = Field(..., alias="Mother's occupation")
+    Fathers_occupation: int = Field(..., alias="Father's occupation")
+    Admission_grade: float = Field(..., alias="Admission grade")
+    Displaced: int = Field(..., alias="Displaced")
+    Educational_special_needs: int = Field(..., alias="Educational special needs")
+    Debtor: int = Field(..., alias="Debtor")
+    Tuition_fees_up_to_date: int = Field(..., alias="Tuition fees up to date")
+    Gender: int = Field(..., alias="Gender")
+    Scholarship_holder: int = Field(..., alias="Scholarship holder")
+    Age_at_enrollment: int = Field(..., alias="Age at enrollment")
+    International: int = Field(..., alias="International")
+    Curricular_units_1st_sem_credited: int = Field(..., alias="Curricular units 1st sem (credited)")
+    Curricular_units_1st_sem_enrolled: int = Field(..., alias="Curricular units 1st sem (enrolled)")
+    Curricular_units_1st_sem_evaluations: int = Field(..., alias="Curricular units 1st sem (evaluations)")
+    Curricular_units_1st_sem_approved: int = Field(..., alias="Curricular units 1st sem (approved)")
+    Curricular_units_1st_sem_grade: float = Field(..., alias="Curricular units 1st sem (grade)")
+    Curricular_units_1st_sem_without_evaluations: int = Field(..., alias="Curricular units 1st sem (without evaluations)")
+    Curricular_units_2nd_sem_credited: int = Field(..., alias="Curricular units 2nd sem (credited)")
+    Curricular_units_2nd_sem_enrolled: int = Field(..., alias="Curricular units 2nd sem (enrolled)")
+    Curricular_units_2nd_sem_evaluations: int = Field(..., alias="Curricular units 2nd sem (evaluations)")
+    Curricular_units_2nd_sem_approved: int = Field(..., alias="Curricular units 2nd sem (approved)")
+    Curricular_units_2nd_sem_grade: float = Field(..., alias="Curricular units 2nd sem (grade)")
+    Curricular_units_2nd_sem_without_evaluations: int = Field(..., alias="Curricular units 2nd sem (without evaluations)")
+    Unemployment_rate: float = Field(..., alias="Unemployment rate")
+    Inflation_rate: float = Field(..., alias="Inflation rate")
+    GDP: float = Field(..., alias="GDP")
+
+    class Config:
+        allow_population_by_field_name = True
+
