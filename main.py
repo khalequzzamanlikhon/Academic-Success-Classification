@@ -1,5 +1,9 @@
 from fastapi import FastAPI
 from StudentInput import StudentInfo
+import uvicorn
+from fastapi.encoders import jsonable_encoder
+
+
 import numpy as np
 import pandas as pd
 import pickle as pk
@@ -50,6 +54,8 @@ def predict(student: StudentInfo):
     predicted_class = np.argmax(predictions, axis=1)
     predicted_class = class_mapping(predicted_class)
     
-    return {"prediction": predicted_class}
+    return jsonable_encoder({"predicted_class": predicted_class[0]})
 
+if __name__=="__main__":
+    uvicorn.run(app,host='127.0.0.1',port=8000)
 
